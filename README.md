@@ -14,7 +14,7 @@
 
 # About
 
-`reft.cpp` is a building tool to compile LLM/LMs' inference serving and training to the designated cloud-GPU or edge-NPU backends.
+`refft.cpp` is a building tool to compile LLM/LMs' inference and training on the designated cloud-GPU or edge-NPU backends to a native executable including API, inference serving, training, model, ops, etc
 
 - Average 20%+ faster inference and training than Python/PyTorch-based inference/training(in the same quantization/precision and use case)
 
