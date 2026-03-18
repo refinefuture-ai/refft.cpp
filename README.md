@@ -32,7 +32,7 @@
 - **Custom Training via Plugins** -- Data-loader, Optimizer, Model layers, Loss-function
 - **Multi-Modal Support** -- Text, vision, audio, etc
 - **Native vRAM mgt** -- Native mem mgt instead of GC to lower peak occ-mem and alloc-overhead
-- **Mixed-precision quantization** -- FP16, w4a16, w8a16, etc supported per tensor/layer/group
+- **Mixed-precision quantization** -- FP16, w4a16, w8a16, etc supported per tensor/channel/block
 - **NPU dynamics** -- enable NPU to support dynamic shape, MoE, control flow, flexible heterogeneous compute
 
 <!--
