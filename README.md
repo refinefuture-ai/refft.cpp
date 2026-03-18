@@ -295,7 +295,7 @@ Technically reft.cpp supports multi-nodes inference and training, while multi-no
 
 # Contact Us
 
-Please contact us via [ai@reft-ai.com](mailto:ai@reft-ai.com) for commercial uses, technical consulting, sponsorship/partnership opportunities, etc. 
+Please contact us via [haiteng@reft-ai.com](mailto:haiteng@reft-ai.com) for commercial uses, technical consulting, sponsorship/partnership opportunities, etc. 
 
 # Acknowledgment
 
