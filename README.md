@@ -44,6 +44,10 @@
 - **Flash Attention -- Optimized mem mgt for long sequences and lower memory footprint
 -->
 
+***
+
+## :tada: refft.cpp build tools （click and jump to the tools webpage）
+
 <p align="center">
 	<a href="https://refinefuture.ai" target="_blank">
 		<!--<img width="2736" height="1650" alt="image" src="https://github.com/user-attachments/assets/1002af12-906d-467e-841a-9b63a5b7e45f" />-->
@@ -52,8 +56,9 @@
 </p>
 
 ***
+
 <a name="using"></a>
-# Inference of LLM/LM
+# :rocket: Inference of LLM/LM
 
 `refft.cpp` build tools can make the executable files as the following examples
 
@@ -63,12 +68,24 @@
 * [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz)
 * [refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz)
 
-```shell
+```bash
+# Install
 tar Jxf ./refft-android-aarch64-qnn-qwen3-20260319.tar.xz
 adb push ./refft-android-aarch64-qnn-qwen3-20260319/* /data/local/tmp/
-# or
-tar Jxf ./refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz
-adb push ./refft-android-aarch64-qnn-qwen3-moe-20260319/* /data/local/tmp/
+
+# Download model weights
+mkdir -p models
+hf download Qwen3/Qwen3-0.6B --load-dir ./models
+adb push ./models/Qwen3-0.6B /data/local/tmp/
+
+*** Support: 0.6B/1.7B/4B/8B/14B/32B/30B-A3B ***
+
+# Launch server
+adb shell
+cd /data/local/tmp
+LD_LIBRARY_PATH=lib ./refft serve \
+  --model /Qwen3-0.6B \
+  --served_model_name Qwen3-0.6B
 ```
 
 `For Nvidia`
@@ -76,25 +93,22 @@ adb push ./refft-android-aarch64-qnn-qwen3-moe-20260319/* /data/local/tmp/
 * [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz)
 * [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb)
 
-```shell
+**Note:** Please contact us for multi-nodes support
+
+```bash
+# Install
 tar Jxf ./refft-linux-x64-cuda-qwen3-20260319.tar.xz
 sudo cp refft-linux-x64-cuda-qwen3-20260319/bin/refft /usr/bin/refft
 # or
 sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
-```
 
-## Download model weights
-
-```shell
+# Download model weights
 mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
-```
 
-## Run
+*** Support: 0.6B/1.7B/4B/8B/14B/32B/30B-A3B/235B-A22B ***
 
-**Note:** Please contact us for multi-nodes support
-
-```bash
+# Launch server
 refft serve \
   --model /workspace/models/Qwen3/Qwen3-0.6B \
   --served_model_name Qwen3-0.6B
@@ -168,7 +182,7 @@ refft serve \
 
 ## Connect via CLI
 
-```shell
+```bash
 curl -Ns http://127.0.0.1:8888/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
@@ -205,7 +219,7 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 <details>
 <summary>Download the public datasets or use your own datasets</summary>
 
-```shell
+```bash
 # Exmaple datasets: `CCI-3-HQ`, `Alpaca GPT4` and `FineWeb`
 
 hf download HuggingFaceFW/finepdfs-edu --repo-type=dataset --local-dir ./datasets/HuggingFaceFW/fineweb-edu
@@ -218,7 +232,7 @@ hf download llamafactory/alpaca_gpt4_en --repo-type=dataset --local-dir ./datase
 <details>
 <summary>Train LLM via Pre-train/full-SFT/freeze-SFT/LoRA/RL</summary>
 
-```shell
+```bash
 mkdir -p output
 refft train \
 	--cutoff_len 512 \
@@ -256,7 +270,7 @@ refft train \
 <details>
 <summary>Output</summary>
 
-```shell
+```bash
 [1][2025-11-30 09:20:15][I][         train_main.cc: 186]  Reft: v1.0.0, 5301f2a4fb303fd647fe783aa326522efde8ceb4
 [1][2025-11-30 09:20:15][I][         train_main.cc: 187]  Build Time: Sun Nov 30 08:37:07 CST 202
 [2025-11-30 09:20:15.895] [info] Apply chat template: qwen2
