@@ -51,20 +51,18 @@
 
 Example model: `Qwen3/Qwen3-0.6B`
 
-<details>
-<summary>
-Download model weights
-</summary>
+## Download model weights
 
 ```shell
 mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
 ```
 
-</details>
+## Install
 
-<details>
-<summary>Run</summary>
+Please check out our [releases page](https://github.com/refinefuture-ai/refft.cpp/releases)
+
+## Run
 
 **Note:** Please contact us for multi-nodes support
 
@@ -73,11 +71,6 @@ refft serve \
   --model /workspace/models/Qwen3/Qwen3-0.6B \
   --served_model_name Qwen3-0.6B
 ```
-
-</details>
-
-<details>
-<summary>Output</summary>
 
 ```sh
   ████████████████████████████████████████▏ 100.0% [ 199/ 199 | 476.2 Hz | 0s<0s]  
@@ -100,10 +93,7 @@ refft serve \
 [2025-11-11 07:02:50.245] [Serve][1] [info] HTTP server listening on 0.0.0.0:8888 ...
 ```
 
-</details>
-
-<details>
-<summary>Connect via CLI</summary>
+## Connect via CLI
 
 ```shell
 curl -Ns http://127.0.0.1:8888/v1/chat/completions \
@@ -116,8 +106,6 @@ curl -Ns http://127.0.0.1:8888/v1/chat/completions \
 	"stream": true
   }'
 ```
-
-output
 
 ```text
 data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chunk","created":1589478378,"model":"Qwen3-0.6B","system_fingerprint":"fp_44709d6fcb","choices":[{"delta":{"role":"assistant"},"index":0,"logprobs":null,"finish_reason":null}],"usage":null}
@@ -136,10 +124,6 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 
 ...
 ```
-
-</details>
-
-<br/>
 
 ***
 
