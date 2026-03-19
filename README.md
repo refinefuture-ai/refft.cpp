@@ -9,8 +9,10 @@
 
 <!-- <img width="3466" height="1308" alt="3311b35fe62743ee47cb7401294aac34" src="https://github.com/user-attachments/assets/1ae5471a-9ceb-4daa-aa91-6dc596639786" /> -->
 
-<img width="922" height="356" alt="64fd0df0b35999dbc1a2e4b881231767" src="https://github.com/user-attachments/assets/422dfc35-c025-4949-9093-62e01ac920a6" />
-
+<p align="center">
+	<!-- <img width="1024" height="356" alt="64fd0df0b35999dbc1a2e4b881231767" src="https://github.com/user-attachments/assets/422dfc35-c025-4949-9093-62e01ac920a6" />-->
+	<img width="1024" alt="https://refinefuture.ai" src="https://github.com/user-attachments/assets/dd0ade07-5baf-4373-9bce-17235cd5b143" />
+</p>
 
 # About
 
@@ -20,8 +22,9 @@
 
 - 0 running dependencies other than Linux/Android/Mac system and GPU/NPU backends
 
-<img width="962" height="510" alt="b6ffe2858851d2d34f6dc5fa05d866e5" src="https://github.com/user-attachments/assets/2cdb49b0-6496-46f7-8dbe-997a7430c160" />
-
+<p align="center">
+	<img width="1024" height="510" alt="b6ffe2858851d2d34f6dc5fa05d866e5" src="https://github.com/user-attachments/assets/2cdb49b0-6496-46f7-8dbe-997a7430c160" />
+</p>
 
 
 
@@ -41,9 +44,12 @@
 - **Flash Attention -- Optimized mem mgt for long sequences and lower memory footprint
 -->
 
-<a href="https://refinefuture.ai" target="_blank">
-	<img width="2736" height="1650" alt="image" src="https://github.com/user-attachments/assets/1002af12-906d-467e-841a-9b63a5b7e45f" />
-</a>
+<p align="center">
+	<a href="https://refinefuture.ai" target="_blank">
+		<!--<img width="2736" height="1650" alt="image" src="https://github.com/user-attachments/assets/1002af12-906d-467e-841a-9b63a5b7e45f" />-->
+		<img width="1024" alt="Native Model Compiler" src="https://github.com/user-attachments/assets/13a71287-511e-490b-b262-38902bb60485" />
+	</a>
+</p>
 
 ***
 <a name="using"></a>
@@ -55,16 +61,41 @@
 
 Example model: `Qwen3/Qwen3-0.6B`
 
+## Install
+
+Please check out our [releases page](https://github.com/refinefuture-ai/refft.cpp/releases)
+
+### For Linux + CUDA
+
+* [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz)
+* [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb)
+
+```shell
+tar Jxf ./refft-linux-x64-cuda-qwen3-20260319.tar.xz
+sudo cp refft-linux-x64-cuda-qwen3-20260319/bin/refft /usr/bin/refft
+# or
+sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
+```
+
+### For Android + NPU
+
+* [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz)
+* [refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz)
+
+```shell
+tar Jxf ./refft-android-aarch64-qnn-qwen3-20260319.tar.xz
+adb push ./refft-android-aarch64-qnn-qwen3-20260319/* /data/local/tmp/
+# or
+tar Jxf ./refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz
+adb push ./refft-android-aarch64-qnn-qwen3-moe-20260319/* /data/local/tmp/
+```
+
 ## Download model weights
 
 ```shell
 mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
 ```
-
-## Install
-
-Please check out our [releases page](https://github.com/refinefuture-ai/refft.cpp/releases)
 
 ## Run
 
