@@ -53,12 +53,10 @@ Example model: `Qwen3/Qwen3-0.6B`
 
 <details>
 <summary>
-Download reft.exe and Weights file (the reft install packages of reft-cuda/reft-rocm/reft-qc/reft-mac are for the Nvidia/AMD/Qualcomm/Apple GPU/NPU respectively)
+Download model weights
 </summary>
 
 ```shell
-curl -fsL https://github.com/reft-ai/refft.cpp/releases/download/v1.0.1/reft-cuda_1.0.1-0ubuntu24.04_amd64.deb
-
 mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
 ```
@@ -66,16 +64,12 @@ hf download Qwen3/Qwen3-0.6B --load-dir ./models
 </details>
 
 <details>
-<summary>Install and Run</summary>
-
-```shell
-sudo apt install -y ./reft-cuda_1.0.1-0ubuntu24.04_amd64.deb
-```
+<summary>Run</summary>
 
 **Note:** Please contact us for multi-nodes support
 
 ```bash
-reft serve \
+refft serve \
   --model /workspace/models/Qwen3/Qwen3-0.6B \
   --served_model_name Qwen3-0.6B
 ```
@@ -149,6 +143,7 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 
 ***
 
+<!--
 #  Training
 
 <details>
@@ -169,7 +164,7 @@ hf download llamafactory/alpaca_gpt4_en --repo-type=dataset --local-dir ./datase
 
 ```shell
 mkdir -p output
-reft train \
+refft train \
 	--cutoff_len 512 \
 	--model ./models/Qwen/Qwen3-0.6B \
 	--block_size 512 \
@@ -250,7 +245,7 @@ reft train \
 
 </details>
 <br/>
-
+-->
 ***
 
 # FAQs
@@ -295,7 +290,7 @@ Technically refft.cpp supports multi-nodes inference and training, while multi-n
 
 # Contact Us
 
-Please contact us via [haiteng@reft-ai.com](mailto:haiteng@reft-ai.com) for commercial uses, technical consulting, sponsorship/partnership opportunities, etc. 
+Please contact us via [haiteng@refinefuture.ai](mailto:haiteng@refinefuture.ai) for commercial uses, technical consulting, sponsorship/partnership opportunities, etc. 
 
 # Acknowledgment
 
