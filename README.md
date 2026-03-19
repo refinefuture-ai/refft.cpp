@@ -85,7 +85,10 @@ adb shell
 cd /data/local/tmp
 LD_LIBRARY_PATH=lib ./refft serve \
   --model /Qwen3-0.6B \
-  --served_model_name Qwen3-0.6B
+  --served_model_name Qwen3-0.6B \
+  --quantization-type w4a16
+
+*** Support: fp16/w8Afp16/w8a16/w4a16 + w8a16 ***
 ```
 
 `For Nvidia`
