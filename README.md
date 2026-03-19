@@ -55,25 +55,10 @@
 <a name="using"></a>
 # Inference of LLM/LM
 
-Example model: `Qwen3/Qwen3-0.6B`
+`refft.cpp` build tools can make the executable files as the following examples
 
-## Install
 
-Please check out our [releases page](https://github.com/refinefuture-ai/refft.cpp/releases)
-
-`Linux + CUDA`
-
-* [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz)
-* [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb)
-
-```shell
-tar Jxf ./refft-linux-x64-cuda-qwen3-20260319.tar.xz
-sudo cp refft-linux-x64-cuda-qwen3-20260319/bin/refft /usr/bin/refft
-# or
-sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
-```
-
-`Android + NPU`
+`For QNN`
 
 * [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz)
 * [refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz)
@@ -84,6 +69,18 @@ adb push ./refft-android-aarch64-qnn-qwen3-20260319/* /data/local/tmp/
 # or
 tar Jxf ./refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz
 adb push ./refft-android-aarch64-qnn-qwen3-moe-20260319/* /data/local/tmp/
+```
+
+`For Nvidia`
+
+* [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz)
+* [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb)
+
+```shell
+tar Jxf ./refft-linux-x64-cuda-qwen3-20260319.tar.xz
+sudo cp refft-linux-x64-cuda-qwen3-20260319/bin/refft /usr/bin/refft
+# or
+sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
 ```
 
 ## Download model weights
@@ -203,7 +200,6 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 
 ***
 
-<!--
 #  Training
 
 <details>
@@ -305,7 +301,7 @@ refft train \
 
 </details>
 <br/>
--->
+
 ***
 
 # FAQs
