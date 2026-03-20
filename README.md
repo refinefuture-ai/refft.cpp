@@ -48,7 +48,7 @@
 
 ***
 
-## :tada: refft.cpp build tools （click and jump to the tools webpage）
+## :tada: refft.cpp build tools
 
 <p align="center">
 	<a href="https://refinefuture.ai" target="_blank">
@@ -57,6 +57,7 @@
 		<img width="1024" alt="Reft Builder" src="https://github.com/user-attachments/assets/58332e55-fd88-4274-9256-4b6cae57fdeb" />
 	</a>
 </p>
+`Click and jump to the tools webpage`
 
 ***
 
