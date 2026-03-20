@@ -70,7 +70,7 @@
 |            Tool            |         Description |
 |----------------------------|---------------------|
 | [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
-|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported <br/> By default, layers are trimmed to support running on OnePlus15/SoC8850.|
+|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported <br/> Layers are trimmed for running on OnePlus15/SM8850/16GB-DDR|
 
 <details>
 	<summary>Intall & Run</summary>
@@ -104,6 +104,8 @@ LD_LIBRARY_PATH=lib ./refft serve \
 |----------------------------|---------------------|
 | [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
 | [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb) | 0.6B/1.7B/4B/8B/14B/32B supported |
+| [refft-linux-x64-cuda-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-moe-20260319.tar.xz) | 30B-A3B supported |
+| [refft-ubuntu2404-x64-cuda-qwen3-moe-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-moe-20260319.deb) | 30B-A3B supported |
 
 <details>
 	<summary>Intall & Run</summary>
