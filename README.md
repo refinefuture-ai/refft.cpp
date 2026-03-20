@@ -11,7 +11,8 @@
 
 <p align="center">
 	<!-- <img width="1024" height="356" alt="64fd0df0b35999dbc1a2e4b881231767" src="https://github.com/user-attachments/assets/422dfc35-c025-4949-9093-62e01ac920a6" />-->
-	<img width="1024" alt="https://refinefuture.ai" src="https://github.com/user-attachments/assets/dd0ade07-5baf-4373-9bce-17235cd5b143" />
+	<!-- <img width="1024" alt="https://refinefuture.ai" src="https://github.com/user-attachments/assets/dd0ade07-5baf-4373-9bce-17235cd5b143" /> -->
+	<img width="1024" alt="https://refinefuture.ai" src="https://github.com/user-attachments/assets/e166a109-33b4-4e43-9d61-dadf77d12115" />
 </p>
 
 # About
@@ -71,6 +72,9 @@
 | [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
 |[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported|
 
+<details>
+	<summary>Intall & Run</summary>
+
 ```bash
 # Install
 tar Jxf ./refft-android-aarch64-qnn-qwen3-20260319.tar.xz
@@ -91,12 +95,19 @@ LD_LIBRARY_PATH=lib ./refft serve \
 
 ```
 
+</details>
+
+
 `For Nvidia`
 
 |            Tool            |         Description |
 |----------------------------|---------------------|
 | [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
 | [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb) | 0.6B/1.7B/4B/8B/14B/32B supported |
+
+<details>
+	<summary>Intall & Run</summary>
+
 
 **Note:** Please contact us for multi-nodes support
 
@@ -216,6 +227,9 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 
 ...
 ```
+
+</details>
+
 
 ***
 
