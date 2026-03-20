@@ -51,7 +51,8 @@
 <p align="center">
 	<a href="https://refinefuture.ai" target="_blank">
 		<!--<img width="2736" height="1650" alt="image" src="https://github.com/user-attachments/assets/1002af12-906d-467e-841a-9b63a5b7e45f" />-->
-		<img width="1024" alt="Native Model Compiler" src="https://github.com/user-attachments/assets/13a71287-511e-490b-b262-38902bb60485" />
+		<!-- <img width="1024" alt="Native Model Compiler" src="https://github.com/user-attachments/assets/13a71287-511e-490b-b262-38902bb60485" /> -->
+		<img width="1024" alt="Reft Builder" src="https://github.com/user-attachments/assets/58332e55-fd88-4274-9256-4b6cae57fdeb" />
 	</a>
 </p>
 
@@ -64,9 +65,10 @@
 
 
 `For QNN`
-
-* [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz)
-* [refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz)
+|            Tool            |         Description |
+|----------------------------|---------------------|
+| [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
+|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported|
 
 ```bash
 # Install
@@ -78,8 +80,6 @@ mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
 adb push ./models/Qwen3-0.6B /data/local/tmp/
 
-*** Support: 0.6B/1.7B/4B/8B/14B/32B/30B-A3B ***
-
 # Launch server
 adb shell
 cd /data/local/tmp
@@ -88,13 +88,14 @@ LD_LIBRARY_PATH=lib ./refft serve \
   --served_model_name Qwen3-0.6B \
   --quantization-type w4a16
 
-*** Support: fp16/w8Afp16/w8a16/w4a16 + w8a16 ***
 ```
 
 `For Nvidia`
 
-* [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz)
-* [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb)
+|            Tool            |         Description |
+|----------------------------|---------------------|
+| [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
+| [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb) | 0.6B/1.7B/4B/8B/14B/32B supported |
 
 **Note:** Please contact us for multi-nodes support
 
@@ -109,7 +110,7 @@ sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
 mkdir -p models
 hf download Qwen3/Qwen3-0.6B --load-dir ./models
 
-*** Support: 0.6B/1.7B/4B/8B/14B/32B/30B-A3B/235B-A22B ***
+*** Support: / ***
 
 # Launch server
 refft serve \
