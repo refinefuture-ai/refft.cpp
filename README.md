@@ -70,7 +70,7 @@
 |            Tool            |         Description |
 |----------------------------|---------------------|
 | [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
-|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported|
+|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported <br/> By default, layers are trimmed to support running on OnePlus15/SoC8850.|
 
 <details>
 	<summary>Intall & Run</summary>
@@ -92,7 +92,7 @@ LD_LIBRARY_PATH=lib ./refft serve \
   --model /Qwen3-0.6B \
   --served_model_name Qwen3-0.6B \
   --quantization-type w4a16
-
+*** Support: fp16/w8Afp16/w8a16/(w4a16 + w8a16)/w4a16 ***
 ```
 
 </details>
