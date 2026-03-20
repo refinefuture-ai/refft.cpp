@@ -92,7 +92,7 @@ LD_LIBRARY_PATH=lib ./refft serve \
   --model /Qwen3-0.6B \
   --served_model_name Qwen3-0.6B \
   --quantization-type w4a16
-*** Support: fp16/w8Afp16/w8a16/(w4a16 + w8a16)/w4a16 ***
+*** Support Mixed Quantization: fp16/W8Afp16/W8A16/W4A16 ***
 ```
 
 </details>
