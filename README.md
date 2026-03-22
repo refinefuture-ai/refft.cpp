@@ -1,7 +1,7 @@
 <!--[![License: CC BY-NC 4.0](https://img.shields.io/badge/license-CC-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/)-->
-[![Release](https://img.shields.io/github/v/release/reft-ai/refft.cpp)](https://github.com/reft-ai/refft.cpp/releases)
-[![Build](https://github.com/reft-ai/reft/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/reft-ai/reft/actions/workflows/release.yml)
-<!--[![Publish](https://github.com/reft-ai/refft.cpp/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/reft-ai/reft/actions/workflows/docker-publish.yml))-->
+[![Release](https://img.shields.io/github/v/release/refinefuture-ai/refft.cpp)](https://github.com/refinefuture-ai/refft.cpp/releases)
+[![Build](https://github.com/refinefuture-ai/reft/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/refinefuture-ai/reft/actions/workflows/release.yml)
+<!--[![Publish](https://github.com/refinefuture-ai/refft.cpp/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/refinefuture-ai/reft/actions/workflows/docker-publish.yml))-->
 
 <!--![reft cc-new-logo jpg](https://github.com/user-attachments/assets/25f0c2e7-0f64-41e9-979d-ddb0ff932c4d)-->
 
@@ -62,24 +62,25 @@
 ***
 
 <a name="using"></a>
+
 # :rocket: Inference of LLM/LM
 
 `refft.cpp` build tools can make the executable files as the following examples
 
 
-`For QNN`
+### For QNN
 |            Tool            |         Description |
 |----------------------------|---------------------|
-| [refft-android-aarch64-qnn-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
-|[refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-android-aarch64-qnn-qwen3-moe-20260319.tar.xz) |30B-A3B supported <br/> Layers are trimmed for running on OnePlus15/SM8850/16GB-DDR|
+| [refft-android-aarch64-qnn-qwen3-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-android-aarch64-qnn-qwen3-20260323.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
+|[refft-android-aarch64-qnn-qwen3-moe-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-android-aarch64-qnn-qwen3-moe-20260323.tar.xz) |30B-A3B supported <br/> Layers are trimmed for running on OnePlus15/SM8850/16GB-DDR|
 
 <details>
 	<summary>Intall & Run</summary>
 
 ```bash
 # Install
-tar Jxf ./refft-android-aarch64-qnn-qwen3-20260319.tar.xz
-adb push ./refft-android-aarch64-qnn-qwen3-20260319/* /data/local/tmp/
+tar Jxf ./refft-android-aarch64-qnn-qwen3-20260323.tar.xz
+adb push ./refft-android-aarch64-qnn-qwen3-20260323/* /data/local/tmp/
 
 # Download model weights
 mkdir -p models
@@ -93,20 +94,21 @@ LD_LIBRARY_PATH=lib ./refft serve \
   --model /Qwen3-0.6B \
   --served_model_name Qwen3-0.6B \
   --quantization-type w4a16
+
 *** Support Mixed Quantization: fp16/W8Afp16/W8A16/W4A16 ***
 ```
 
 </details>
 
 
-`For Nvidia`
+### For Nvidia
 
 |            Tool            |         Description |
 |----------------------------|---------------------|
-| [refft-linux-x64-cuda-qwen3-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-20260319.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
-| [refft-ubuntu2404-x64-cuda-qwen3-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-20260319.deb) | 0.6B/1.7B/4B/8B/14B/32B supported |
-| [refft-linux-x64-cuda-qwen3-moe-20260319.tar.xz](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-linux-x64-cuda-qwen3-moe-20260319.tar.xz) | 30B-A3B/235B-A22B supported |
-| [refft-ubuntu2404-x64-cuda-qwen3-moe-20260319.deb](https://github.com/reft-ai/refft.cpp/releases/download/20260319/refft-ubuntu2404-x64-cuda-qwen3-moe-20260319.deb) | 30B-A3B/235B-A22B supported |
+| [refft-linux-x64-cuda-qwen3-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-linux-x64-cuda-qwen3-20260323.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
+| [refft-ubuntu2404-x64-cuda-qwen3-20260323.deb](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-ubuntu2404-x64-cuda-qwen3-20260323.deb) | 0.6B/1.7B/4B/8B/14B/32B supported |
+| [refft-linux-x64-cuda-qwen3-moe-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-linux-x64-cuda-qwen3-moe-20260323.tar.xz) | 30B-A3B/235B-A22B supported |
+| [refft-ubuntu2404-x64-cuda-qwen3-moe-20260323.deb](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-ubuntu2404-x64-cuda-qwen3-moe-20260323.deb) | 30B-A3B/235B-A22B supported |
 
 <details>
 	<summary>Intall & Run</summary>
@@ -116,10 +118,10 @@ LD_LIBRARY_PATH=lib ./refft serve \
 
 ```bash
 # Install
-tar Jxf ./refft-linux-x64-cuda-qwen3-20260319.tar.xz
-sudo cp refft-linux-x64-cuda-qwen3-20260319/bin/refft /usr/bin/refft
+tar Jxf ./refft-linux-x64-cuda-qwen3-20260323.tar.xz
+sudo cp refft-linux-x64-cuda-qwen3-20260323/bin/refft /usr/bin/refft
 # or
-sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260319.deb
+sudo apt install ./refft-ubuntu2404-x64-cuda-qwen3-20260323.deb
 
 # Download model weights
 mkdir -p models
@@ -231,13 +233,44 @@ data: {"id":"d971c92d-8505-4152-b8b3-cf9726e19127","object":"chat.completion.chu
 
 </details>
 
+### For Apple silicon
+
+|            Tool            |         Description |
+|----------------------------|---------------------|
+| [refft-macos-arm64-mlx-qwen3-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-macos-arm64-mlx-qwen3-20260323.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported |
+| [refft-macos-arm64-mlx-qwen3-moe-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-macos-arm64-mlx-qwen3-moe-20260323.tar.xz) | 30B-A3B/235B-A22B supported |
+
+<details>
+	<summary>Intall & Run</summary>
+
+
+**Note:** Please contact us for multi-nodes support
+
+```bash
+# Install
+tar Jxf ./refft-macos-arm64-mlx-qwen3-20260323.tar.xz
+sudo cp refft-macos-arm64-mlx-qwen3-20260323/bin/refft /usr/bin/refft
+
+# Download model weights
+mkdir -p models
+hf download Qwen3/Qwen3-0.6B --load-dir ./models
+
+# Launch server
+refft serve \
+  --model /workspace/models/Qwen3/Qwen3-0.6B \
+  --served_model_name Qwen3-0.6B
+```
+
+</details>
 
 ***
 
-#  Training
+<a name="training"></a>
+
+# :rocket: Training of LLM/LM
 
 <details>
-<summary>Download the public datasets or use your own datasets</summary>
+	<summary>Download the public datasets or use your own datasets</summary>
 
 ```bash
 # Exmaple datasets: `CCI-3-HQ`, `Alpaca GPT4` and `FineWeb`
@@ -250,7 +283,7 @@ hf download llamafactory/alpaca_gpt4_en --repo-type=dataset --local-dir ./datase
 </details>
 
 <details>
-<summary>Train LLM via Pre-train/full-SFT/freeze-SFT/LoRA/RL</summary>
+	<summary>Train LLM via Pre-train/full-SFT/freeze-SFT/LoRA/RL</summary>
 
 ```bash
 mkdir -p output
@@ -288,7 +321,7 @@ refft train \
 </details>
 
 <details>
-<summary>Output</summary>
+	<summary>Output</summary>
 
 ```bash
 [1][2025-11-30 09:20:15][I][         train_main.cc: 186]  Reft: v1.0.0, 5301f2a4fb303fd647fe783aa326522efde8ceb4
@@ -334,6 +367,7 @@ refft train \
 ```
 
 </details>
+
 <br/>
 
 ***
