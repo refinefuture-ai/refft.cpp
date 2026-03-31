@@ -71,31 +71,30 @@
 ### For QNN
 |            Tool            |         Description |
 |----------------------------|---------------------|
-| [refft-android-aarch64-qnn-qwen3-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-android-aarch64-qnn-qwen3-20260323.tar.xz) | 0.6B/1.7B/4B/8B/14B/32B supported|
-|[refft-android-aarch64-qnn-qwen3-moe-20260323.tar.xz](https://github.com/refinefuture-ai/refft.cpp/releases/download/20260323/refft-android-aarch64-qnn-qwen3-moe-20260323.tar.xz) |30B-A3B supported <br/> Layers are trimmed for running on OnePlus15/SM8850/16GB-DDR|
+| android-aarch64-qnn-qwen3 | 0.6B/1.7B/4B/8B/14B/32B supported, Tested on OnePlus15/SM8850/16GB-DDR|
+| android-aarch64-qnn-qwen3-moe | 30B-A3B supported <br/> Layers are trimmed for running on OnePlus15/SM8850/16GB-DDR, Notes: MoE, FlashAtttion ops supported; TP supported for multi-HTPs backends; Quantization can be set to w4a16, w8a16, w4afp16, w8afp16, fp16 and default is fp16, Tested on OnePlus15/SM8850/16GB-DDR|
+
+
 
 <details>
 	<summary>Intall & Run</summary>
 
 ```bash
-# Install
-tar Jxf ./refft-android-aarch64-qnn-qwen3-20260323.tar.xz
-adb push ./refft-android-aarch64-qnn-qwen3-20260323/* /data/local/tmp/
-
 # Download model weights
 mkdir -p models
-hf download Qwen3/Qwen3-0.6B --load-dir ./models
-adb push ./models/Qwen3-0.6B /data/local/tmp/
+hf download Qwen3/Qwen3-30B-A3B-Instruct-2507 --load-dir ./models
+adb push ./models/Qwen3-30B-A3B-Instruct-2507 /data/local/tmp/
+
+# Install
+tar -xzf android-aarch64-qnn-qwen3moe-fa_moe_hybrid-fp16.tar.gz
+
+# Run CLI
+cd android-aarch64-qnn-qwen3moe-fa_moe_hybrid-fp16
+ANDROID_DST=/data/local/tmp/refft_release/android-aarch64-qnn-qwen3moe-fa_moe_hybrid-fp16 bash ./scripts/run_cli.sh --model_dir /data/local/tmp/Qwen3-30B-A3B-Instruct-2507 --prompt "Who are you?" --max_new_tokens 1
 
 # Launch server
-adb shell
-cd /data/local/tmp
-LD_LIBRARY_PATH=lib ./refft serve \
-  --model /Qwen3-0.6B \
-  --served_model_name Qwen3-0.6B \
-  --quantization-type w4a16
-
-*** Support Mixed Quantization: fp16/W8Afp16/W8A16/W4A16 ***
+cd android-aarch64-qnn-qwen3moe-fa_moe_hybrid-fp16
+ANDROID_DST=/data/local/tmp/refft_release/android-aarch64-qnn-qwen3moe-fa_moe_hybrid-fp16 bash ./scripts/run_server.sh --model_dir /data/local/tmp/Qwen3-30B-A3B-Instruct-2507 --port 18080
 ```
 
 </details>
